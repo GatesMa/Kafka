@@ -1,6 +1,6 @@
 package com.gatesma.kafkalearn.chapter3;
 
-import com.heima.kafka.ConsumerClientConfig;
+import com.gatesma.kafkalearn.ConsumerClientConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
