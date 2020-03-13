@@ -3,6 +3,7 @@ package com.gatesma.kafkalearn.chapter1;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
 
@@ -23,13 +24,16 @@ public class ProducerFastStart {
     public static void main(String[] args) {
         Properties properties = new Properties();
         //设置key序列化器
-        properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        //properties.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         //设置重试次数
         properties.put(ProducerConfig.RETRIES_CONFIG, 10);
         //设置值序列化器
-        properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        //properties.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         //设置集群地址
-        properties.put("bootstrap.servers", Broker_List);
+        //properties.put("bootstrap.servers", Broker_List);
+        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Broker_List);
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
         ProducerRecord<String, String> record = new ProducerRecord<>(Topic, "kafka-demo",
