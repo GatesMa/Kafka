@@ -1,10 +1,10 @@
 package com.gatesma.kafkalearn.chapter3;
 
+import com.dyuproject.protostuff.runtime.RuntimeSchema;
 import com.gatesma.kafkalearn.chapter2.Company;
 import io.protostuff.LinkedBuffer;
 import io.protostuff.ProtostuffIOUtil;
 import io.protostuff.Schema;
-import io.protostuff.runtime.RuntimeSchema;
 import org.apache.kafka.common.serialization.Serializer;
 
 import java.util.Map;

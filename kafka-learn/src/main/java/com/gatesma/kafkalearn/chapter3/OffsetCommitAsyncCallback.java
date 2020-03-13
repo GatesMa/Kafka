@@ -1,6 +1,6 @@
 package com.gatesma.kafkalearn.chapter3;
 
-import com.heima.kafka.ConsumerClientConfig;
+import com.gatesma.kafkalearn.ConsumerClientConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.common.TopicPartition;
@@ -37,7 +37,7 @@ public class OffsetCommitAsyncCallback extends ConsumerClientConfig {
                         if (exception == null) {
                             System.out.println(offsets);
                         } else {
-                            log.error("fail to commit offsets {}", offsets, exception);
+//                            log.error("fail to commit offsets {}", offsets, exception);
                         }
                     }
                 });

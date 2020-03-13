@@ -59,7 +59,7 @@ public class KafkaConsumerAnalysis {
                 }
             }
         } catch (Exception e) {
-            log.error("occur exception ", e);
+//            log.error("occur exception ", e);
         } finally {
             consumer.close();
         }
