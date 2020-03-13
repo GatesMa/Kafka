@@ -10,7 +10,7 @@ import java.util.Properties;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
- * 位移提交
+ * 位移提交 - 同步
  */
 public class CheckOffsetAndCommit {
     public static final String brokerList = "localhost:9092";

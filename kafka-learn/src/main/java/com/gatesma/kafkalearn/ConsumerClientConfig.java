@@ -5,7 +5,7 @@ import org.apache.kafka.common.serialization.StringDeserializer;
 import java.util.Properties;
 
 /**
- * @Author dayuan
+ * @Author GatesMa
  * @Date 2019/7/11 14:46
  */
 public class ConsumerClientConfig extends KafkaContext {

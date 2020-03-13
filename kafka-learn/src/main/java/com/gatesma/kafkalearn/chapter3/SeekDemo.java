@@ -28,7 +28,7 @@ public class SeekDemo extends ConsumerClientConfig {
         System.out.println(assignment);
         for (TopicPartition tp : assignment) {
             // 参数partition表示分区，offset表示指定从分区的哪个位置开始消费
-            consumer.seek(tp, 10);
+            consumer.seek(tp, 1);
         }
 //        consumer.seek(new TopicPartition(topic,0),10);
         while (true) {

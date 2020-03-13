@@ -1,7 +1,7 @@
 package com.gatesma.kafkalearn;
 
 /**
- * @Author dayuan
+ * @Author GatesMa
  * @Date 2019/7/11 14:40
  */
 public abstract class KafkaContext {
