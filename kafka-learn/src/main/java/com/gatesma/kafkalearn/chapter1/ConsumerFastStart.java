@@ -24,7 +24,7 @@ public class ConsumerFastStart {
 
     private static final String Topic = "heima";
 
-    private static final String Group_Id = "group.demo";
+    private static final String Group_Id = "group. ";
 
     public static void main(String[] args) {
         Properties properties = new Properties();
