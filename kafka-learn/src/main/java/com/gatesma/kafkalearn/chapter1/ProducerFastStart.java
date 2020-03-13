@@ -33,6 +33,8 @@ public class ProducerFastStart {
         //设置集群地址
         //properties.put("bootstrap.servers", Broker_List);
         properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, Broker_List);
+        properties.put(ProducerConfig.ACKS_CONFIG, "0");
+
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
         ProducerRecord<String, String> record = new ProducerRecord<>(Topic, "kafka-demo",
