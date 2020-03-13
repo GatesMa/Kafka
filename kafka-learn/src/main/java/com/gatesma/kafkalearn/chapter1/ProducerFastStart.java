@@ -1,11 +1,10 @@
 package com.gatesma.kafkalearn.chapter1;
 
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
+import java.util.concurrent.Future;
 
 /**
  * Copyright (C), 2020
@@ -37,10 +36,27 @@ public class ProducerFastStart {
 
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
         ProducerRecord<String, String> record = new ProducerRecord<>(Topic, "kafka-demo",
-                "hello, kafka, Wakanda Forever!");
+                "hello kafka, Wakanda Forever! sych");
 
         try {
-            producer.send(record);
+//            同步发送
+//            Future<RecordMetadata> send = producer.send(record);
+//            RecordMetadata recordMetadata = send.get();
+//            System.out.println("Topic: " + recordMetadata.topic());
+//            System.out.println("Partition: " + recordMetadata.partition());
+//            System.out.println("Offset: " + recordMetadata.offset());
+
+//            异步发送
+            producer.send(record, new Callback() {
+                @Override
+                public void onCompletion(RecordMetadata recordMetadata, Exception e) {
+                    if(e == null) {
+                        System.out.println("Topic: " + recordMetadata.topic());
+                        System.out.println("Partition: " + recordMetadata.partition());
+                        System.out.println("Offset: " + recordMetadata.offset());
+                    }
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
